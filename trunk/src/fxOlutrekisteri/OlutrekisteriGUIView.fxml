@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.ListChooser?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="469.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxOlutrekisteri.OlutrekisteriGUIController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Tiedosto">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleLopeta" text="Lopeta" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Apua">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleApua" text="Apua" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleTietoja" text="Tietoja" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <ListChooser fx:id="chooserOluet" onMouseClicked="#handleChooser" onMousePressed="#handleChooser" rivit="Karhu III &#10;Koff 3" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <Label text="SELAA" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="Elephant" size="15.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleTulosta" text="Tulosta" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <TextField fx:id="textHaku" onKeyReleased="#handleHaku" promptText="Haku" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+   </left>
+   <center>
+      <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <GridPane hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="253.0" vgap="4.0">
+              <columnConstraints>
+                <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="104.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="374.0" minWidth="10.0" prefWidth="365.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label text="Nimi" GridPane.rowIndex="1" />
+                  <Label text="Panimo" GridPane.rowIndex="2" />
+                  <Label text="Tyyli" GridPane.rowIndex="3" />
+                  <Label text="Alc" GridPane.rowIndex="4" />
+                  <Label text="Valmistusmaa" GridPane.rowIndex="5" />
+                  <Label text="OLUT">
+                     <font>
+                        <Font name="Elephant" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Muistiinpano" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Elephant" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pvm" GridPane.rowIndex="8" />
+                  <Label text="Myyntipaikka" GridPane.rowIndex="9" />
+                  <Label text="Kommentti" GridPane.rowIndex="10" />
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="textPvm" promptText="13.3.2017" />
+                        <TextField fx:id="textHinta" promptText="1.00" GridPane.columnIndex="2" />
+                        <Label text="Hinta" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="76.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="EBU" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField id="ebu" fx:id="textEbu" promptText="13" GridPane.columnIndex="2" />
+                        <TextField id="alc" fx:id="textAlc" promptText="4.7" />
+                     </children>
+                  </GridPane>
+                  <TextField id="nimi" fx:id="textNimi" promptText="Karhu III" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField id="panimo" fx:id="textPanimo" promptText="Sinebrychoff" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField id="tyyli" fx:id="textTyyli" promptText="Vaalea Lager" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField id="maa" fx:id="textMaa" promptText="Suomi" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Pisteet" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="textPaikka" promptText="S-Market Kuokkala" />
+                        <TextField fx:id="textPisteet" promptText="2" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
+                  <TextField fx:id="textKommentti" promptText="Saunakalja" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <GridPane GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="282.0" minWidth="10.0" prefWidth="265.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="103.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handlePoista" text="Poista olut" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" top="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleTallennaOlut" text="Tallenna olut" GridPane.halignment="RIGHT">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" top="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="208.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="160.0" />
+                    </columnConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handlePoistaMuistiinpano" text="Poista muistiinpano" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleTallennaMuistiinpano" prefWidth="178.0" text="Tallenna muistiinpano" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" top="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#handleSeuraavaMuistiinpano" text="Seuraava" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
